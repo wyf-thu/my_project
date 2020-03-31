@@ -1,10 +1,6 @@
-﻿<template>
-    <div>
-        <div id='header'>
-            <header-bar v-bind:msbm-seen='msbm' v-bind:fbms-seen='fbms' v-bind:tsxx-seen='tsxx' v-bind:msxxgl-seen='msxxgl' v-bind:qxgl-seen='qxgl'  v-bind:my-message='mess'></header-bar>
-        </div>
-        <div id='signupbox'>
-            <div id="signup" style="text-align: center; border-radius: 5px; position: relative; top: 15%; height: 60%; left:70%; width:15%; display: inline-block; background-color: rgb(255, 255, 255, 0.8)">
+<template>
+<div id='signupbox'>
+    <div id="signup" style="text-align: center; border-radius: 5px; position: relative; top: 15%; height: 60%; left:70%; width:15%;  background-color: rgb(255, 255, 255, 0.8)">
                 <br>
                 <div>
                     <p style="font-size: 20px">账号密码登录</p>
@@ -26,24 +22,10 @@
                 <label v-if="seen == 'loginsuc'">登录成功！</label>
             </div>
         </div>
-        <br style="line-height: 20px">
-    </div>
 </template>
 
 <script>
-import headerBar from './HeaderBar.vue'
-import $ from 'jquery/dist/jquery.min.js'
 export default {
-  name: 'Home',
-  components: {
-    'header-bar': headerBar
-  },
-  created () {
-    if (window.sessionStorage.register) {
-      this.seen = 'registersuc'
-      window.sessionStorage.removeItem('register')
-    }
-  },
   data () {
     return {
       seen: ''
@@ -66,6 +48,7 @@ export default {
       if (!(password.length >= 1 && password.length <= 16)) {
         success = false
       }
+      /*
       function GetJsonData () {
         var json = {
           'login_name': username,
@@ -73,7 +56,9 @@ export default {
         }
         return json
       }
+      */
       if (success === true) {
+        /*
         $.ajax({
           type: 'post',
           url: '/api/login_ajax',
@@ -98,13 +83,14 @@ export default {
             _this.seen = 'loginfail'
           }
         })
+        */
       } else {
         _this.seen = 'loginfail'
       }
     }
   }
 }
-console.log('aa')
+
 </script>
 
 <style>
@@ -113,7 +99,6 @@ console.log('aa')
     height: 500px;
     background-color:aquamarine;
     left:20%;
-    background: url('~@/assets/signinpic.jpg');
     background-size: 100% 100%;
     border-radius: 5px;
     margin-left: 5%;
