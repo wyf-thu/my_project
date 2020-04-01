@@ -1,23 +1,23 @@
 <template>
   <div id="app">
-    <Home></Home>
+    <hello></hello>
   </div>
 </template>
 
 <script>
-import Home from './components/Home'
+import hello from './components/classes'
 // import GCD from './components/GCD'
 // import hello from './components/hello'
 export default {
   name: 'App',
   components: {
-    Home
+    hello
   }
 }
 </script>
 
 <style>
-/*
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -26,5 +26,4 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-*/
 </style>
