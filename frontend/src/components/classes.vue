@@ -3,35 +3,24 @@
   <div id="app">
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <h3 class="panel-title">Add Product</h3>
+        <h3 class="panel-title">课程列表</h3>
       </div>
       <div class="panel-body form-inline">
-        <label>
-          Id:
-          <input type="text" class="form-control" v-model="id">
-        </label>
-        
-        <label>
-          Name:
-          <input type="text" class="form-control" v-model="name" @keyup.enter="add">
-        </label>
-        
-        <label>Keywords Search:
-          <!-- 注意 ：Vue中所有指令，在调用的时候，都以v- 开头-->
+        <label>查找课程名:
           <input type="text" class="form-control" v-model="keywords">
         </label>
         
-        <input type="button" value="Add" class="btn btn-primary" @click="add">
+        <input type="button" value="Add" class="btn btn-primary" @click="查询">
       </div>
     </div>
 
     <table class="table table-hover table-bordered table-striped">
       <thead>
         <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Time</th>
-          <th>Operation</th>
+          <th>课程名</th>
+          <th>主讲教师</th>
+          <th>上课时间地点</th>
+          <th>留空</th>
         </tr>
       </thead>
       <tbody>
@@ -40,7 +29,7 @@
           <td>{{item.name }}</td>
           <td>{{item.ctime}}</td>
           <td>
-            <a href="#" @click.prevent="del(item.id)">Delete</a>
+            <a href="#" @click.prevent="del(item.id)">留空操作</a>
           </td>
         </tr>
       </tbody>
@@ -55,11 +44,11 @@ export default {
   data() {
     return {
       list: [
-        { id: 1, name: "奔驰", ctime: new Date() },
-        { id: 2, name: "宝马", ctime: new Date() }
+        { id: "课程1", name: "老师1", ctime: "时间1" },
+        { id: "课程2", name: "老师2", ctime: "时间2" },
+        { id: "课程3", name: "老师3", ctime: "时间3" },
+        { id: "课程4", name: "老师4", ctime: "时间4" }
       ],
-      id: "",
-      name: "",
       keywords: ""
     };
   },
@@ -79,7 +68,7 @@ export default {
       //         return true
       //     }
       // })
-
+      /*
       let index = this.list.findIndex(item => {
         if (item.id == id) {
           return true;
@@ -87,6 +76,7 @@ export default {
       });
 
       this.list.splice(index, 1);
+      */
     },
 
     search(keywords) {
@@ -103,7 +93,7 @@ export default {
       return this.list.filter(item => {
         //注意:在ES6中，为字符串提供了一个新方法，叫做 String.prototype.includes("要包含的字符串")
         // 如果包含，返回true，反之false
-        if (item.name.includes(keywords)) {
+        if (item.id.includes(keywords)) {
           return item;
         }
       });

@@ -1,9 +1,5 @@
 <template>
     <div>
-        <div id='header'>
-            <header-bar v-bind:msbm-seen='msbm' v-bind:fbms-seen='fbms' v-bind:tsxx-seen='tsxx'
-            v-bind:msxxgl-seen='msxxgl' v-bind:qxgl-seen='qxgl'  v-bind:my-message='mess'></header-bar>
-        </div>
         <div class="register-container" id="register-form">
             <h1 class="title" >用户注册</h1>
               <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
@@ -57,13 +53,13 @@
 </template>
 
 <script>
-import headerBar from './HeaderBar.vue'
+// import headerBar from './HeaderBar.vue'
 import ident from './ident.vue'
 import $ from 'jquery'
 export default {
   name: 'Home',
   components: {
-    'header-bar': headerBar,
+    //'header-bar': headerBar,
     'ide': ident
   },
   data () {

@@ -97,7 +97,7 @@ export default {
   #signupbox {
     width: 90%;
     height: 500px;
-    background-color:aquamarine;
+    /*background-color:aquamarine;*/
     left:20%;
     background-size: 100% 100%;
     border-radius: 5px;

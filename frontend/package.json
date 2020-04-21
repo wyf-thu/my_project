@@ -11,16 +11,20 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "socketIo": "node -harmony build/server-config.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "element-ui": "^2.13.0",
     "jquery": "^3.4.1",
+    "mint-ui": "^2.2.13",
     "popper.js": "^1.16.1",
+    "socket.io": "^2.3.0",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuex": "^3.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -68,6 +72,7 @@
     "mocha": "^3.2.0",
     "nightwatch": "^0.9.12",
     "node-notifier": "^5.1.2",
+    "node-sass": "^4.13.1",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^1.2.0",
     "phantomjs-prebuilt": "^2.1.14",
@@ -76,6 +81,7 @@
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
     "rimraf": "^2.6.0",
+    "sass-loader": "^7.3.1",
     "selenium-server": "^3.0.1",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
@@ -88,7 +94,9 @@
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^2.9.1",
+    "webpack-hot-middleware": "^2.25.0",
     "webpack-merge": "^4.1.0"
   },
   "engines": {
