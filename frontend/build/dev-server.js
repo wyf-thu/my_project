@@ -66,6 +66,7 @@ app.use(staticPath, express.static('./static'))
 module.exports = app.listen(port, function (err) {
   if (err) {
     console.log(err)
+    console.log("aaa")
     return
   }
   var uri = 'http://localhost:' + port

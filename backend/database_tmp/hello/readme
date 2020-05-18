@@ -1,4 +1,0 @@
-主要的几个文件:
-1. hello/settings.py 需要设置成mysql
-2. polls/ models.py 注意,其中的user: status 只能初始化为 '', 因为似乎选项的framework 只能是空
-3. 其他

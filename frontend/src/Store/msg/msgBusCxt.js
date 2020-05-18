@@ -14,7 +14,8 @@ class MsgBusCxt {
   sendMsg (msg) {
     msg.userId = this.cxt.userId
     msg.userName = this.cxt.name
-    msg.type = 'send'
+    msg.type = 1
+    msg.direction = 'send'
     this.cxt.vm.$store.dispatch(Keys.ADDMSG, msg)
     this.cxt.sendMsg(msg)
   }

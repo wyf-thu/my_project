@@ -12,6 +12,7 @@ class Context {
   }
   createIo (vm, callback) {
     this.vm = vm
+    /*
     let socket = this.io.connect(this.url)
     let self = this
     this.socket = socket
@@ -19,6 +20,7 @@ class Context {
       self.roomInfo = roomInfo
       callback(roomInfo)
     })
+    */
   }
   registerUser (id, name) {
     this.userId = id

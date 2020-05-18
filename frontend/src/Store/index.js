@@ -16,8 +16,31 @@ let opt = {
   state: null,
   getters: null,
   mutations: null,
-  actions: null
+  actions: null,
+  collapsed: false,
+  topNavState: 'home',
+  leftNavState: 'home'
 }
+
+const date = 'Mon Mar 24 2018 00:00:00 GMT+0800 (中国标准时间)'
+const data = [
+  {
+    id: '1111',
+    name: 'Allen',
+    type: '员工',
+    status: '已离职'
+  },{
+    id: '2222',
+    name: 'Thomas',
+    type: '司机',
+    status: '在职'
+  }
+]
+
+for(var item in opt) {
+  localStorage.getItem(item)? opt[item] = JSON.parse(localStorage.getItem(item)): false;
+}
+
 _rvCxt.use(opt)
 _uvCxt.use(opt)
 _mvCxt.use(opt)

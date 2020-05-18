@@ -33,7 +33,7 @@ export default {
     }
   }
 }
-</script>>
+</script>
 
 <style>
   .modal-dialog.show {

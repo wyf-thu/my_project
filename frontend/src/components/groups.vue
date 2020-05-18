@@ -32,12 +32,12 @@
         </tr>
       </tbody>
     </table>
-    <h3>{{ checked }}</h3>
   </div>
 </template>
 
 
 <script>
+import bar from './bar'
 export default {
   name: "classes",
   data() {

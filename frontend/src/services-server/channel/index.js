@@ -37,8 +37,10 @@ class Channel {
     this.sendUsers()
   }
   notifyMsg (msg) {
-    msg.type = 'notify'
+    msg.direction = 'notify'
+    msg.type = 1
     this.socket.to('roomId' + this.roomInfo.id).emit(this.cxt.eventKeys.emit.notifyMsg, msg)
+    console.log(this.roomInfo.id + "aaa")
   }
   sendUsers () {
     this.socket.emit(this.cxt.eventKeys.emit.refUsers, this.cxt.users)

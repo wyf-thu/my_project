@@ -113,7 +113,6 @@ console.log('aa')
     height: 500px;
     background-color:aquamarine;
     left:20%;
-    background: url('~@/assets/signinpic.jpg');
     background-size: 100% 100%;
     border-radius: 5px;
     margin-left: 5%;

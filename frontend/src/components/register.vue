@@ -2,12 +2,12 @@
     <div>
         <div class="register-container" id="register-form">
             <h1 class="title" >用户注册</h1>
-              <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+              <el-form :model="ruleForm" :rules="rules" :label-position="left" ref="ruleForm" label-width="100px" class="demo-ruleForm">
                 <div class="leftbox">
                   <el-form-item label="用户名：" prop="username">
                     <el-input v-model="ruleForm.username" placeholder="4~8 个字符，作为登陆使用"></el-input>
                   </el-form-item>
-                  <el-form-item label="性别" prop="sex">
+                  <el-form-item label="性别：" prop="sex">
                     <el-select v-model="ruleForm.sex" placeholder="请选择您的性别">
                       <el-option label="男" value="男"></el-option>
                       <el-option label="女" value="女"></el-option>
